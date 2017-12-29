@@ -1,5 +1,6 @@
 from app import app
 from db import db
+from models.submissions import SubmissionModel
 
 db.init_app(app)
 
