@@ -3,7 +3,7 @@
 ## Installation
 
 '''
-pip install Flask
+pip install Flask,
 python app.py
 '''
 
@@ -15,4 +15,4 @@ This data can be pulled via the GET method by providing both the season year/typ
 
 ## Implementation
 
-This project is implemented using Flask and sqlite3.
+This project was implemented using Flask and postgresql.
