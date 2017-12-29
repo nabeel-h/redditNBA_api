@@ -59,62 +59,7 @@ class SubmissionModel(db.Model):
 		except:
 			return None
 		
-	@classmethod
-	def find_by_yrsub(cls,year_subreddit):
-		try:
-			#year_subreddit = 2016&LAL
-			split = year_subreddit.split('&')
-			year,subreddit = split[0],split[1]
-
-			yearseason_list = [year+'-reg_season',year+'-offseason',year+'-playoffs']
-			
-			subreddit_id = SubredditModel.convert_to_id(subreddit)[0]
-			yearseason_ids = [YearSeasonModel.convert_to_id(yearseason_list[0])[0],YearSeasonModel.convert_to_id(yearseason_list[1])[0],YearSeasonModel.convert_to_id(yearseason_list[2])[0]]
-			
-			search_results = cls.query.filter_by(subreddit_id=subreddit_id)	
-			results = list(filter(lambda x: x.yearseason_id in yearseason_ids, search_results))
-
-			return {"results": [result.json() for result in results]}
-		except:
-			return None
-			
-	@classmethod
-	def find_by_subreddit(cls,subreddit):
-		try:
-			subreddit_id = SubredditModel.convert_to_id(subreddit)[0]
-			
-			results = cls.query.filter_by(subreddit_id=subreddit_id)
-			
-			return {"results": [result.json() for result in results]}
-		except:
-			return None
-			
-	@classmethod
-	def find_by_seasonsub(cls, season_subreddit):
-		try:
-			#season_subreddit = offseason&LAL
-			split = season_subreddit.split("&")
-			season,subreddit = split[0],split[1]
-			
-			print(season,subreddit,"step1 pass")
-			
-			list_ofseasons = YearSeasonModel.return_all()
-			print(list_ofseasons,"step2 pass")
-			
-			list_ofseasons_id =[]
-			for yearseason in list_ofseasons:
-				if yearseason.yearseason_name.split('-')[1] == season:
-					list_ofseasons_id.append(yearseason.id)
-			print(list_ofseasons_id)
-			
-			subreddit_id = SubredditModel.convert_to_id(subreddit)[0]
-			
-			search_results = cls.query.filter_by(subreddit_id=subreddit_id)
-			results = list(filter(lambda x: x.yearseason_id in list_ofseasons_id, search_results))
-			
-			return {"results":[result.json() for result in results]}
-		except:
-			return None
+		
 		
 		
 		

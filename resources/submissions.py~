@@ -73,25 +73,3 @@ class SignificantSubmissions(Resource):
 		if submission_results:
 			return {'significant submissions':submission_results}
 		return {"message":"Retrieval of significant submissions failed, check inputs."}
-
-class SignificantSubmissions_byyrsub(Resource):
-        def get(self,year_subreddit):
-            submission_results = SubmissionModel.find_by_yrsub(year_subreddit)
-            if submission_results:
-                return {"significant submissions": submission_results}
-            return {"message": "Retrieval of significant submissions failed, check inputs."}
-
-class SignificantSubmissions_bysub(Resource):
-	def get(self,subreddit):
-		submission_results = SubmissionModel.find_by_subreddit(subreddit)
-		if submission_results:
-			return {"significant submissions":submission_results}
-		return {"message": "Retrieval of significant submissions failed, check inputs."}
-		
-class SignificantSubmissions_byseasonsub(Resource):
-	def get(self,season_subreddit):
-		submission_results = SubmissionModel.find_by_seasonsub(season_subreddit)
-		if submission_results:
-			return {"Significant submissions":submission_results}
-		return {"message":"Retrieval of significant submissions failed, check inputs"}
-		

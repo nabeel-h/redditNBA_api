@@ -4,7 +4,7 @@ from flask_jwt import JWT
 
 from security import authenticate,identity
 from resources.user import UserRegister
-from resources.submissions import Submission, SignificantSubmissions, SignificantSubmissions_byyrsub, SignificantSubmissions_bysub,SignificantSubmissions_byseasonsub
+from resources.submissions import Submission, SignificantSubmissions
 
 
 from models.submissions import SubmissionModel
@@ -32,9 +32,9 @@ jwt =JWT(app,authenticate,identity)
 api.add_resource(Submission, '/submission/<string:submission_redditID>')
 api.add_resource(SignificantSubmissions,'/sigsubs/<string:yearseason_subreddit>')
 api.add_resource(UserRegister, '/register')
-api.add_resource(SignificantSubmissions_byyrsub,'/sigsubs_yrteam/<string:year_subreddit>')
-api.add_resource(SignificantSubmissions_bysub, '/sigsubs_sub/<string:subreddit>')
-api.add_resource(SignificantSubmissions_byseasonsub,'/sigsubs_seasonsub/<string:season_subreddit>')
+#api.add_resource(, '/sigsubs_yrteam/<string:year_subreddit>')
+#api.add_resource(SignificantSubmissions_byteam, '/sigsubs_team/<string:subreddit>')
+#api.add_resource(SignificantSubmissions_byseasonteam,'/sigsubs_seasonteam/<string:season_subreddit>')
 
 if __name__== '__main__':
 	from db import db

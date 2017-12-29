@@ -37,3 +37,11 @@ class YearSeasonModel(db.Model):
 		if result:
 			return result
 		return None
+		
+	@classmethod
+	def return_all(cls):
+		result = cls.query.all()
+		if result:
+			return result
+		return None
+		
