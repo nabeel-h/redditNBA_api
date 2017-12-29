@@ -1,5 +1,4 @@
-import json
-from db import db
+import jsons
 from models.submissions import SubmissionModel
 from models.yearseasons import YearSeasonModel
 from models.subreddits import SubredditModel
