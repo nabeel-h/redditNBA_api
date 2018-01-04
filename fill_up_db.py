@@ -1,7 +1,8 @@
-import jsons
+import json
 from models.submissions import SubmissionModel
 from models.yearseasons import YearSeasonModel
 from models.subreddits import SubredditModel
+from db import db
 
 
 def fill_up_db():
