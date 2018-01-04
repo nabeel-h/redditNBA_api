@@ -34,7 +34,9 @@ if __name__== '__main__':
 		def create_tables():
 			db.create_all()
 			#if database is already not populated then populate items
-			from fill_up_db import fill_up_db
-			print(fill_up_db())
-		
+			from models.submissions import SubmissionModel
+			if db.session.query(SubmissionModel).count() < 1:
+				from fill_up_db import fill_up_db
+				print(fill_up_db()) 
+			
 	app.run(port=5000)
