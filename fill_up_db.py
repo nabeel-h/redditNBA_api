@@ -6,7 +6,7 @@ from db import db
 
 
 def fill_up_db():
-	with open('.\source_data\seasonyears_subreddits.json') as fhand:
+	with open('seasonyears_subreddits.json') as fhand:
 		data = json.load(fhand)
 		
 		#fill up subreddits and year_seasons tables
@@ -35,7 +35,7 @@ def fill_up_db():
 			yearseason_dict[yearseason] = yearseason_retrieve_id
 			
 	#insert all submissions
-	with open('.\source_data\significant_subs.json') as fhand:
+	with open('significant_subs.json') as fhand:
 		data = json.load(fhand)
 		for year in data:
 			for subreddit in data[year]:
