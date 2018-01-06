@@ -4,11 +4,14 @@ from models.yearseasons import YearSeasonModel
 from models.subreddits import SubredditModel
 from db import db
 
+#need to use a relative file path for the static json files that will be used to load up
+#the database before the first request. So I used the os library for this
 import os
 current_file_directory = os.path.dirname(__file__)
 
 seasonyears_subreddits_path = os.path.join(current_file_directory,'seasonyears_subreddits.json')
 significant_subs_path = os.path.join(current_file_directory,'significant_subs.json')
+
 
 def fill_up_db():
 	with open(seasonyears_subreddits_path) as fhand:
@@ -36,7 +39,6 @@ def fill_up_db():
 			subreddits_dict[subreddit] = subreddit_retrieve_id
 		for yearseason in list_of_yearseasons:
 			yearseason_retrieve_id = YearSeasonModel.convert_to_id(yearseason)[0]
-			print(yearseason,yearseason_retrieve_id)
 			yearseason_dict[yearseason] = yearseason_retrieve_id
 			
 	#insert all submissions
