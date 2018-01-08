@@ -1,5 +1,5 @@
 # REST API for reddit submissions from the NBA community
-www.reddit-nba-api.stream
+https://www.reddit-nba-api.stream
 
 ## Description
 
