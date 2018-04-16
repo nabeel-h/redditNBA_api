@@ -1,5 +1,5 @@
 # REST API for reddit submissions from the NBA community
-https://www.reddit-nba-api.stream
+https://reddit-nba-sub-api.herokuapp.com
 
 ## Description
 
@@ -15,27 +15,27 @@ The API offers the following __GET__ methods to retrieve specific data from the 
 
 ```All submissions for particular season year and subseason and subreddit:- /sigsubs/<year>-<sub_season>&<subreddit>```
 
-e.g :- www.reddit-nba-api.stream/sigsubs/2015-reg_season&LAL
+e.g :- https://reddit-nba-sub-api.herokuapp.com/sigsubs/2015-reg_season&LAL
 
 *Returns significant submissions during the whole 2015 NBA season (including playoffs, offseason and regular season) for the Los Angeles Lakers subreddit community.
 
 ```All submissions for a particular season year and subreddit:- /sigsubs_yrteam/<year>&<subreddit>```
 
-e.g :- www.reddit-nba-api.stream/sigsubs_yrteam/2015&LAL
+e.g :- https://reddit-nba-sub-api.herokuapp.com/sigsubs_yrteam/2015&LAL
 
 
 * Returns all significant submissions across all years for the Los Angeles Lakers subreddit community.
 
 ```All submissions for particular subreddit across all years:- /sigsubs_sub/<subreddit>```
 
-e.g :- www.reddit-nba-api.stream/sigsubs_sub/LAL
+e.g :- https://reddit-nba-sub-api.herokuapp.com/sigsubs_sub/LAL
 
 
 * Returns significant submissions from offseasons across all NBA seasons for the Los Angeles Lakers subreddit community.
 
 ```All submissions across all years for partiulcar subseason and subreddit:- /sigsubs_seasonsub/<sub_season>&<subreddit>```
 
-e.g :- www.reddit-nba-api.stream/sigsubs_seasonsub/offseason&LAL
+e.g :- https://reddit-nba-sub-api.herokuapp.com/sigsubs_seasonsub/offseason&LAL
 
 
 * There is additionally a __POST__ method available to update the database with new submission data if needed.
